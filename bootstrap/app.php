@@ -1,5 +1,5 @@
 <?php
-
+require __DIR__ . '/helpers.php';//加载helper函数
 /*
 |--------------------------------------------------------------------------
 | Create The Application
