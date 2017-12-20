@@ -42,3 +42,10 @@ body {
 .footer .container p a{
     color: inherit;
 }
+/*验证码样式*/
+
+.register-page img.captcha {
+    margin-bottom: 0px;
+    margin-top: 10px;
+    cursor: pointer;
+}

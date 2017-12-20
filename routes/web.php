@@ -15,3 +15,8 @@
 //    return view('welcome');
 //});
 Route::get('/', 'PagesController@root')->name('root');//首页
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+//用户
+Route::resource('users', 'UsersController', ['only' => ['show', 'update', 'edit']]);

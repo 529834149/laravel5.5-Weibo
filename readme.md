@@ -19,3 +19,5 @@
 			-_header.blade.php —— 布局的头部区域文件，负责顶部导航栏区块；
 			-_footer.blade.php —— 布局的尾部区域文件，负责底部导航区块；
 	3、所有的css和js统一放到对应的 public/css&&js /bbs.css &&js
+	4、本站使用composer require "mews/captcha:~2.0"
+	扩展包实现验证码登录mews/captcha(https://github.com/mewebstudio/captcha)
