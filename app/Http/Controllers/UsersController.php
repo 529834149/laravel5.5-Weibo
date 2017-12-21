@@ -1,13 +1,18 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Http\Requests\UserRequest;//表单请求验证（FormRequest）
 use App\Handlers\ImageUploadHandler;
 class UsersController extends Controller
 {
+    public function __construct()
+    {
+//        $this->middleware('auth', ['except' => ['*']]);
+        $this->middleware('auth', ['except' => ['show']]);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -58,6 +63,7 @@ class UsersController extends Controller
      */
     public function edit(User $user)
     {
+//        $this->authorize('update', $user);
         return view('users.edit', compact('user'));
     }
 
@@ -71,6 +77,7 @@ class UsersController extends Controller
      */
     public function update(UserRequest $request,ImageUploadHandler $uploader, User $user)
     {
+       
         $data = $request->all();
         if ($request->avatar) {
             $result = $uploader->save($request->avatar, 'avatars', $user->id, 362);
