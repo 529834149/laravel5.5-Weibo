@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Http\Requests\UserRequest;//表单请求验证（FormRequest）
+use App\Handlers\ImageUploadHandler;
 class UsersController extends Controller
 {
     /**
@@ -68,9 +69,19 @@ class UsersController extends Controller
      * @return \Illuminate\Http\Response
      * UserRequest 表单请求验证（FormRequest）
      */
-    public function update(UserRequest $request, User $user)
+    public function update(UserRequest $request,ImageUploadHandler $uploader, User $user)
     {
-        $user->update($request->all());
+        $data = $request->all();
+        if ($request->avatar) {
+            $result = $uploader->save($request->avatar, 'avatars', $user->id, 362);
+            if ($result) {
+                $data['avatar'] = $result['path'];
+                //当上传成功后删除之前的图片信息
+                $uploader->history($user['avatar']);
+            }
+        }
+
+        $user->update($data);
         return redirect()->route('users.show', $user->id)->with('success', '个人资料更新成功！');
     }
 
@@ -84,4 +95,5 @@ class UsersController extends Controller
     {
         //
     }
+    
 }

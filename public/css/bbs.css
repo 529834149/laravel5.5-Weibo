@@ -49,3 +49,7 @@ body {
     margin-top: 10px;
     cursor: pointer;
 }
+/*// show 用户头像*/
+.users-show-page .user-info .thumbnail{
+    margin-bottom: 0px;
+}
