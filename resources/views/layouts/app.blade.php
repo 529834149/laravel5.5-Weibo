@@ -12,11 +12,15 @@
     <title>@yield('title', 'LaraBBS') - Laravel 进阶教程</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+     <link href="http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <!--<link href="{{ asset('css/app.css') }}" rel="stylesheet">-->
      <link href="{{ asset('css/bbs.css') }}" rel="stylesheet">
+     
+     
 </head>
 
 <body>
+    
     <div id="app" class="{{ route_class() }}-page">
 
         @include('layouts._header')

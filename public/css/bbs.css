@@ -53,3 +53,62 @@ body {
 .users-show-page .user-info .thumbnail{
     margin-bottom: 0px;
 }
+/*右边模块信息*/
+/* Topic Index Page */
+/*.topics-index-page, .categories-show-page {*/
+    .topic-list .nav > li > a {
+        position: relative;
+        display: block;
+        padding: 5px 14px;
+        font-size: 0.9em;
+    }
+    .topic-list a{
+        color: #444444;
+    }
+    .topic-list .meta {
+        font-size:0.9em;
+        color: #b3b3b3;
+    }
+    .topic-list .meta a {
+        color: #b3b3b3;
+    }
+    .topic-list .badge {
+        background-color: #d8d8d8;
+    }
+    .topic-list hr {
+        margin-top: 12px;
+        margin-bottom: 12px;
+        border: 0;
+        border-top: 1px solid #dcebf5;
+    }
+/*}*/
+/*.topics-index-page {
+    .topic-list {
+        .nav > li > a {
+            position: relative;
+            display: block;
+            padding: 5px 14px;
+            font-size: 0.9em;
+        }
+        a {
+            color: #444444;
+        }
+        .meta {
+            font-size:0.9em;
+            color: #b3b3b3;
+            a {
+               color: #b3b3b3;
+            }
+        }
+        .badge {
+            background-color: #d8d8d8;
+        }
+        hr {
+            margin-top: 12px;
+            margin-bottom: 12px;
+            border: 0;
+            border-top: 1px solid #dcebf5;
+        }
+    }
+}*/
+
