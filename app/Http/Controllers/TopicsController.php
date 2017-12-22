@@ -65,10 +65,10 @@ class TopicsController extends Controller
 
     public function destroy(Topic $topic)
     {
-            $this->authorize('destroy', $topic);
-            $topic->delete();
+        $this->authorize('destroy', $topic);
+        $topic->delete();
 
-            return redirect()->route('topics.index')->with('message', '删除成功');
+        return redirect()->route('topics.index')->with('success', '成功删除！');
     }
     //实现文本编辑器中的图片上传
     public function uploadImage(Request $request, ImageUploadHandler $uploader)
