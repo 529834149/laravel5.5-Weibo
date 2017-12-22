@@ -2,6 +2,8 @@
 <!--默认获取config语言包设置-->
 <html lang="{{ app()->getLocale() }}">
 <head>
+    <title>@yield('title', 'LaraBBS') - Laravel 进阶教程</title>
+    <meta name="description" content="@yield('description', 'LaraBBS 爱好者社区')" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,6 +17,7 @@
      <link href="http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     <!--<link href="{{ asset('css/app.css') }}" rel="stylesheet">-->
      <link href="{{ asset('css/bbs.css') }}" rel="stylesheet">
+    @yield('styles')
      
      
 </head>
@@ -37,5 +40,6 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/bbs.js') }}"></script>
+    @yield('scripts')
 </body>
 </html>
